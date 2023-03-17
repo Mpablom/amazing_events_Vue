@@ -1,0 +1,412 @@
+*,html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+html{
+    min-height: 100%;
+}
+body{
+    min-height: 100vh;
+    position: relative;
+    background: linear-gradient(to bottom, rgb(185, 0, 80),rgb(129, 0, 56));
+}
+
+/* ================================ HEADER =================================== */
+
+.navbar{
+    max-width: 100%;
+}
+.logo{
+    animation-name: wiggle;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.nav-link{
+    color: whitesmoke;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.active{
+    font-weight: bold;
+    color: rgb(255, 0, 111) !important;
+}
+.sub-nav{
+    box-shadow: 1px 1px 10px -5px black !important;
+    height: 250px;
+    width: 100%;
+    background-image:	url('../img/Music_Concert.jpg');
+    background-size: cover;
+    background-position: 0;
+    margin-top: 3.7rem;
+}
+.title{
+    font-weight: 600 !important;
+    font-size:xx-large !important;
+    text-shadow: 3px 3px 1px#000000;
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+}
+/* Keyframes */
+@keyframes wiggle {
+    0%, 7% {
+        transform: rotateZ(0);
+    }
+    15% {
+        transform: rotateZ(-15deg);
+    }
+    20% {
+        transform: rotateZ(10deg);
+    }
+    25% {
+        transform: rotateZ(-10deg);
+    }
+    30% {
+        transform: rotateZ(6deg);
+    }
+    35% {
+        transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+        transform: rotateZ(0);
+    }
+}
+
+
+/* =============================== MAIN =================================== */
+
+main{
+    padding-bottom: 100px;
+    padding-top: 60px;
+}
+p{
+    font-family: 'Nunito Sans', sans-serif;
+
+}
+span{
+    font-weight: 900 !important;
+}
+
+/* =============================== HOME, EVENTS, PAST-EVENTS =================================== */
+
+            /* _______________________ SEARCH __________________________ */
+
+.check-container{
+    align-items: baseline;
+}
+.form-check-label{
+    font-weight: 200;
+    width: 100%;
+    font-family: 'Nunito Sans', sans-serif;
+    color: white;
+}
+
+#no-results {
+    max-width: 60%;
+    margin-left: 20%;
+    display: flex;
+    font-weight: 900;
+    align-content: center;
+    justify-content: center;
+    padding: 50px;
+    font-size: 24px;
+    color: red;
+}
+.search{
+    width: 100% !important;
+}
+.fas, .btn-primary{
+    transition: all .7s;
+}
+.btn-primary:hover .fas{
+    color:#0d6efd;
+}
+.btn-primary:hover{
+    color:#0d6efd;
+    background: white;
+    transform: scale(1.05);
+}
+            /* _______________________ CARDS _____________________________ */
+.card{
+    box-shadow: 0px 0px 20px -10px black;
+    padding-bottom: 1.5%;
+    height: 100%;
+}
+.card-img-top{
+    height: 150px;
+    width: 85%;
+    margin-left: 7.5%;
+    box-shadow: -5px -5px 7px -4px rgb(0, 0, 0);
+    transition: all .4s ease-in-out;
+}
+.card-img-top:hover{
+    transform: scale(1.08);
+}
+.card-title{
+    font-weight: 900 !important;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 0px 0px 4px #000000;
+    font-family: 'Nunito Sans', sans-serif;
+    margin-bottom: 10%;
+}
+.card-text{
+    text-align: center;
+    font-weight: 400;
+    font-style: italic;
+}
+.seeMore{
+    font-size: 14px;
+    box-shadow: -5px -5px 7px -4px black;
+    border: none;
+    color: black;
+    background-image: linear-gradient(225deg, #f992cb 0%, #feb1dc 50%, #f992cb  100%);
+}
+.seeMore:hover{
+    color: fuchsia;
+    background: white;
+    outline: 1px solid fuchsia !important;
+    transform: scale(1.05);
+}
+
+/* ================================ CONTACT =================================== */
+
+.form-container{
+    color: black;
+    border-radius: 20px;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 5%;
+    box-shadow:  0px 0px 20px 0px black;
+    padding-bottom: 1%;
+    background-image: linear-gradient(225deg, #fabaff 0%, #fbd8fe 50%, #fabaff  100%);
+}
+.form-contact{
+    margin-left: 25%;
+}
+.btn-contact{
+    width: 30%;
+    margin-left: 70%;
+    box-shadow: -5px -5px 7px -4px black;
+    transition: all .4s ease-in-out;
+}
+.btn-contact:hover{
+    transform: scale(1.08);
+}
+
+/* ================================ STATS =================================== */
+
+.table-container{
+    box-shadow: 1px 1px 8px 0px black;
+    width: 92%;
+    margin-left: 4%;
+}
+table{
+    background-image: linear-gradient(225deg, #bad6ff 0%, #e7f1ff 50%, #bad6ff 100%);
+}
+tbody>th,td{
+    width: 33% !important;
+}
+th,td,tr{
+    border: 1px solid black !important;
+    font-weight: 200;
+    font-style: italic !important;
+}
+.th-text{
+    text-align: center;
+    font-weight: 700 !important;
+}
+
+/* ================================ DETAILS =================================== */
+
+.img-details, .description{
+    border: 2px solid #333;
+    border-radius: 8px !important;
+    width: 49% !important;
+}
+.img-fluid{
+    width: 100%;
+    min-height: 100%;
+    box-shadow: -5px -5px 7px -2px black;
+    transition: all .4s ease-in-out;
+    border-radius: 8px;
+}
+.img-fluid:hover{
+    transform: scale(1.05);
+}
+.card-details{
+    width: 80%;
+    margin-left: 10%;
+    border: 1px solid black;
+}
+.description>.card-footer, .card-header{
+    background-color: rgb(185, 0, 80);
+    color: whitesmoke;
+    border-radius: none;
+    box-shadow: -4px -4px 7px -4px black;
+    line-height: 1.5rem;
+}
+.card-header{
+    box-shadow: 2px 2px 10px -1px black;
+    display: flex;
+    justify-content: space-between;
+}
+.description>.card-header>p{
+    color: gray;
+}
+.description>.card-footer{
+    width:100%; 
+    margin-top:40%;
+}
+
+/* ================================ FOOTER =================================== */
+
+.footer{
+    color:rgb(255, 255, 255);
+    position:absolute;
+    width: 100%;
+}
+.name{
+    font-size: 22px;
+    font-weight: 700;
+    margin-right: 5% !important;
+}
+.text-name{
+    text-transform: uppercase;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 200 !important;
+}
+.fab{
+    transition: all .4s ease-in;
+}
+.fab:hover{
+    transform: scale(.80);
+}
+
+/* ================================ MEDIA QUERIES =================================== */
+
+@media (max-width:1200px) {
+    .check-container{
+        display: block !important;
+    }
+    .form-check{
+        align-items: baseline !important;
+        flex-wrap: wrap !important;
+        margin: 0;
+        padding: 0;
+    }
+    .search{
+        display: flex !important;
+        margin-top: 10px;
+    }
+    .btn-contact{
+        margin-left: 20% !important;
+        width: 60% !important;
+    }
+    .card-img-top{
+        width: 90%;
+        margin-left: 5% !important;
+    }
+    .card-details{
+        display: inline-flex !important;
+        width: 80%;
+    }
+    .img-details{
+        width: 100% !important;
+    }
+    .description{
+        width: 100% !important;
+    }
+}
+@media (max-width:686px){
+    .form{
+        margin: 0;
+    }
+    .form-contact{
+        width: 80% !important;
+        margin-left: 10% !important;
+    }
+    .filter-container{
+        display: block !important;
+    }
+    .check-container{
+        display:flex !important;
+        flex-wrap: wrap !important;
+        align-items: flex-start;
+        width: 100% !important;
+    }
+    .form-check{
+        display: flex !important;
+        max-width: 20%;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: center;
+    }
+    .form-check-input{
+        margin-left: 25% !important;
+    }
+    .search{
+        padding: 0 !important;
+        padding-right: 5% !important;
+    }
+    .btn-contact{
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+    .form-container{
+        width: 94%;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+    .card-img-top{
+        height: auto;
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+@media(max-width: 320px){
+    *{
+        font-size: 12px !important;
+    }
+    .form-check-label{
+        padding: 0 !important;
+    }
+}
+
+/* ================================ OVERFLOW BAR =================================== */
+
+        /* _______________________ WIDTH __________________________ */
+
+::-webkit-scrollbar {
+    width: 13px;
+}
+
+        /* _______________________ TRACK __________________________ */
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 10px 5px transparent;
+    border-radius: 0px;
+    background: linear-gradient(to top, #333, rgb(134, 134, 134),#333);
+}
+
+        /* _______________________ HANDLE __________________________ */
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, rgb(255, 0, 111),rgb(0, 0, 0));
+    border-radius: 8px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+}
+        /* _______________________ HANDLE ON HOVER __________________ */
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to top, rgb(255, 0, 111),rgb(0, 0, 0));
+    border-radius: 8px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+}
