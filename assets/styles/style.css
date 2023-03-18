@@ -106,7 +106,7 @@ span{
 
 #no-results {
     max-width: 60%;
-    margin-left: 20%;
+    margin-left: 5%;
     display: flex;
     font-weight: 900;
     align-content: center;
@@ -114,6 +114,7 @@ span{
     padding: 50px;
     font-size: 24px;
     color: red;
+    text-align: center;
 }
 .search{
     width: 100% !important;

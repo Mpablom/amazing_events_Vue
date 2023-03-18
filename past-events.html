@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing | Home</title>
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/reset.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <!-- ****************************************************** NAVBAR ************************************************** -->
+            <nav class="navbar navbar-expand-lg bg-dark bg-gradient fixed-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="./">
+                        <img src="./assets/img/Logo_Amazing_Events.png" class="logo" alt="amazin-events" width="150" height="30">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <ul class="navbar-nav justify-content-end me-md-0 me-auto mb-2 pe-md-0 mb-lg-0 ms-md-5 ps-md-5 items-group">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="./">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./upcoming-events.html">Upcoming Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="./past-events.html">Past Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./contact.html">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./stats.html">Stats</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- ****************************************************** SUB-NAVBAR ************************************************** -->
+            <div class="sub-nav pt-5 d-block">
+                <div class="navbar navbar-expand-lg justify-content-between mt-3">
+                    <a href="./upcoming-events.html" class="carousel-control-prev-icon"></a>
+                    <h1 class="title d-inline-flex" >Past Events</h1>
+                    <a href="./contact.html" class="carousel-control-next-icon" ></a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <!-- ****************************************************** SEARCH ************************************************** -->
+            <form class="form" name="form">
+                <div class="d-inline-flex w-100 filter-container">
+                    <div class="d-inline-flex w-100 check-container" id="checks">
+                        <div v-for="categorie in category" class="form-check d-inline-flex mt-3 ms-3">
+                            <input v-model="categorySelected" class="form-check-input m-0 " type="checkbox" :value="categorie" :id="categorie">
+                            <label class="form-check-label ps-2 pe-4 sm-ps-0 sm-pe-0" :for="categorie">
+                                {{categorie}}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="container w-50 pe-0 me-1 search">
+                        <div class="d-flex w-100 pe-0 me-0 search" role="search">
+                            <input v-model="texto" class="form-control me-2 rounded-pill" type="text" placeholder="Search" aria-label="Search" id="search">
+                            <button class="btn btn-primary rounded-pill" id="boton-search" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            {{filterDouble}}
+            <!-- ****************************************************** CARDS ************************************************** -->
+            <div class="row mt-5 ms-4 me-4 gap-4 justify-content-around" id="cards">
+                <h2 v-if="past.length == 0" id="no-results" class="row">No se Encontró el evento!!</h2>
+                <div v-for="events of past" class="col-sm-5 col-md-4 col-lg-4 col-xl-3">
+                    <div class="card">
+                        <img :src="events.image" class="card-img-top m-4" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">{{events.name}}</h5>
+                            <p class="card-text">{{events.description}}</p>
+                        </div>
+                        <div class="card-footer d-inline-flex border-top-0">
+                            <p> Price:<span class="pe-2">${{events.price}}.-</span></p>
+                            <a :href="'./details.html?id='+events._id" class="btn btn-dark w-75 seeMore">See More</a>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer> 
+            <!-- ****************************************************** FOOTER ************************************************** -->
+            <div class="navbar navbar-expand-lg bg-dark bg-gradient d-flex justify-content-between mt-5 footer sticky-bottom">
+                <div class="social d-inline-flex ms-4 gap-4">
+                    <i class="fab fa-instagram fa-2x"></i>
+                    <i class="fab fa-facebook fa-2x"></i>
+                    <i class="fab fa-whatsapp fa-2x"></i>
+                </div>
+                <div class="name d-inline-flex me-4">
+                    <span class="text-name">fe04-tn | <span id="year"></span></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/past-events.js"></script>
+</body>
+</html>
