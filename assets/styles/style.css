@@ -106,7 +106,7 @@ span{
 
 #no-results {
     max-width: 60%;
-    margin-left: 5%;
+    margin-left: 20%;
     display: flex;
     font-weight: 900;
     align-content: center;
@@ -114,7 +114,6 @@ span{
     padding: 50px;
     font-size: 24px;
     color: red;
-    text-align: center;
 }
 .search{
     width: 100% !important;
@@ -217,10 +216,17 @@ th,td,tr{
     border: 1px solid black !important;
     font-weight: 200;
     font-style: italic !important;
+    padding: 7px 0px !important;
 }
 .th-text{
     text-align: center;
-    font-weight: 700 !important;
+    font-weight: bolder !important;
+    background:linear-gradient(to top,#2f3235, #212529,#2f3235);
+    color: #e7f1ff;
+}
+.subtitle{
+    font-weight: 600;
+    font-style: italic;
 }
 
 /* ================================ DETAILS =================================== */
